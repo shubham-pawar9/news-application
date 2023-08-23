@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.Main{
+  padding: 5px; 
+  display: flex;
+  flex-wrap: wrap;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 0px 4px 8px 0px #00000030;
+}
+.heading {
+  font-size: 25px;
+  font-weight: 600;
+}
+.headingImg {
+  width: 100%;
+  margin: 15px 0px;
+  box-shadow: 4px 7px 6px 0px #7c7979;
+}
+.sourceName {
+  font-size: 10px;
+  font-style: italic;
+  text-decoration: underline;
+}
+.readMoreBtn {
+  border: none;
+  background: none;
+  border-bottom: 2px solid #E91E63;
+  max-width: fit-content;
+  font-size: 10px;
+  margin: 5px 0px;
+  width: fit-content;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+}
+.publishedAt {
+  font-size: 10px;
+  font-weight: bold;
+}
