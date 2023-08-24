@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Cards from "./Cards";
 import Loader from "./Loader";
+import NavBar from "./NavBar";
 
 const Main = () => {
   const [cityName, setCityName] = useState("Satara");
@@ -8,6 +9,7 @@ const Main = () => {
   const [status, setStatus] = useState(null);
   const [loadCount, setLoadCount] = useState(null);
   const [initialNum, setInitialNum] = useState(0);
+  const [loadingComplete, setLoadingComplete] = useState(false);
   const inputRef = useRef();
   useEffect(() => {
     fetch(
@@ -16,10 +18,18 @@ const Main = () => {
       .then((response) => response.json())
       .then((data) => setNewsData(data));
   }, [cityName]);
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      alert();
+    }
+  };
+
   const handleChange = () => {
     setStatus(true);
+    setLoadingComplete(false);
     setCityName(inputRef.current.value);
-
+    setInitialNum(0);
     // setLoadCount(newsData.articles.length);
   };
   useEffect(() => {
@@ -30,16 +40,17 @@ const Main = () => {
   }, [newsData]);
   return (
     <>
-      <input type="text" ref={inputRef} />
-      <button onClick={handleChange}>Submit</button>
-      {status && (
+      <NavBar inputRef={inputRef} handleChange={handleChange} />
+      {status && !loadingComplete && (
         <Loader
           number={loadCount}
           initialNum={initialNum}
           setInitialNum={setInitialNum}
+          loadingComplete={loadingComplete}
+          setLoadingComplete={setLoadingComplete}
         />
       )}
-      {initialNum == loadCount && <Cards data={newsData} />}
+      {loadingComplete && <Cards data={newsData} />}
     </>
   );
 };
