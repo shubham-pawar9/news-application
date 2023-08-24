@@ -15,24 +15,38 @@
 .cards {
   display: flex;
   flex-direction: column;
-  /* width: 25%; */
-  border: 1px solid black;
   padding: 10px;
-  box-shadow: 0px 4px 8px 0px #00000030;
+  box-shadow: 0px 10px 6px 4px #00000045;
+  background-image: linear-gradient(270deg, #24455533, transparent);
+  margin: 20px 0;
 }
 .heading {
-  font-size: 25px;
+  font-size: 45px;
   font-weight: 600;
+  font-variant: petite-caps;
+  text-shadow: 3px 3px 3px #80808070;
 }
+.middleInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.descriptionText {
+  width: 65%;
+  font-size: 22px;
+}
+
 .headingImg {
-  width: 100%;
+  width:35%;
   margin: 15px 0px;
   box-shadow: 4px 7px 6px 0px #7c7979;
+  border-radius: 3px;
 }
 .sourceName {
   font-size: 10px;
   font-style: italic;
   text-decoration: underline;
+  width: 65%;
 }
 .readMoreBtn {
   border: none;
@@ -43,13 +57,12 @@
   margin: 5px 0px;
   width: fit-content;
 }
-.details {
-  display: flex;
-  flex-direction: column;
-}
+
 .publishedAt {
   font-size: 10px;
   font-weight: bold;
+  width: 35%;
+  text-align: right;
 }
 .LoaderContainer {
   position: absolute;
@@ -101,4 +114,38 @@
   width: 25%;
   height: 100vh;
   border: 1px solid black;
+  padding: 10px;
+}
+.headNav {
+  display: flex;
+  justify-content: space-evenly;
+}
+.nameInputBox {
+  width: 60%;
+  border: none;
+  border-bottom: 2px solid black;
+  text-align: center;
+  font-size: 17px;
+  padding: 5px;
+  /* cursor: pointer; */
+  background-image: url('../public//images/searchIcon.svg'); /* Add your image path here */
+  background-size: 20px 20px; /* Adjust background size to match image dimensions */
+  background-position: 10px center; /* Adjust background position to align the icon */
+  background-repeat: no-repeat;
+  transition: 0.9s ease-in-out background-position;
+}
+.nameInputBox:focus-visible {
+  outline: none;
+  background-position: right;
+}
+
+.EnterBtn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background: #8080801f;
+  cursor: pointer;
+}
+.EnterBtn img {
+  width: 20px;
 }

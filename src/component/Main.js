@@ -19,17 +19,12 @@ const Main = () => {
       .then((data) => setNewsData(data));
   }, [cityName]);
 
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      alert();
-    }
-  };
-
   const handleChange = () => {
     setStatus(true);
     setLoadingComplete(false);
     setCityName(inputRef.current.value);
     setInitialNum(0);
+    console.log(newsData);
     // setLoadCount(newsData.articles.length);
   };
   useEffect(() => {
