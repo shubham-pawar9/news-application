@@ -47,8 +47,9 @@ const Main = () => {
       )}
       {!loadingComplete && (
         <div className="rightSide">
-          <div className="DivHeading">
-            Experience the Power of Our Reporter Webflow Template
+          <div className="divHeading">
+            {!status && "News from around the globe, at your fingertips"}
+            {status && "Loading..."}
           </div>
         </div>
       )}
