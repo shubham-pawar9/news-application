@@ -3,6 +3,34 @@
   margin: 0;
   padding: 0;
 }
+body {
+  /* background-image: url(../public/images/news-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+.rightSide {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: -webkit-fill-available;
+  position: absolute;
+  left: 25%;
+  background-image: url(../public/images/news-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.divHeading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #272727;
+  transform: translate(-50%, -50%);
+  font-size: 37px;
+  text-shadow: 0px 10px 20px #ffffff;
+}
 .Main{
   padding: 5px;
   display: flex;

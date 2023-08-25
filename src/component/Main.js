@@ -45,6 +45,14 @@ const Main = () => {
           setLoadingComplete={setLoadingComplete}
         />
       )}
+      {!loadingComplete && (
+        <div className="rightSide">
+          <div className="DivHeading">
+            Experience the Power of Our Reporter Webflow Template
+          </div>
+        </div>
+      )}
+
       {loadingComplete && <Cards data={newsData} />}
     </>
   );
