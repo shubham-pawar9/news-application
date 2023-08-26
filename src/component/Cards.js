@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Cards = ({ data }) => {
+  console.log(data);
   return (
     <>
       <div className="outOfMain">

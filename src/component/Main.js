@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Cards from "./Cards";
 import Loader from "./Loader";
 import NavBar from "./NavBar";
-
+import data from "../JsonFiles/data.json";
 const Main = () => {
   const [cityName, setCityName] = useState("Satara");
   const [newsData, setNewsData] = useState();
@@ -17,7 +17,7 @@ const Main = () => {
   useEffect(() => {
     fetch(apiUpdate)
       .then((response) => response.json())
-      .then((data) => setNewsData(data));
+      .then((data) => console.log(data));
   }, [apiUpdate]);
 
   const handleChange = () => {
@@ -29,24 +29,13 @@ const Main = () => {
     setInitialNum(0);
     console.log(newsData);
   };
-  const handleIndia = () => {
-    setApiUpdate(
-      `https://newsapi.org/v2/top-headlines?country=in&apiKey=b0aea83d13bf4cd581fcbb015a974623`
-    );
-    setStatus(true);
-    setLoadingComplete(false);
-    setInitialNum(0);
-    console.log(newsData);
-  };
-  const handleIndEntertainment = (e) => {
-    setApiUpdate(
-      `https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=b0aea83d13bf4cd581fcbb015a974623`
-    );
-    setStatus(true);
-    setLoadingComplete(false);
-    setInitialNum(0);
-  };
 
+  const handleDataUpdate = (e) => {
+    setNewsData(data[e.target.id]);
+    setStatus(true);
+    setLoadingComplete(false);
+    setInitialNum(0);
+  };
   // useEffect(() => {
   //   newsData != undefined
   //     ? setLoadCount(newsData.articles.length)
@@ -58,8 +47,7 @@ const Main = () => {
       <NavBar
         inputRef={inputRef}
         handleChange={handleChange}
-        handleIndia={handleIndia}
-        handleIndEntertainment={handleIndEntertainment}
+        handleDataUpdate={handleDataUpdate}
       />
       {status && !loadingComplete && (
         <Loader

@@ -154,8 +154,13 @@ body {
 .headNav {
   display: flex;
   justify-content: space-evenly;
+ 
+}
+.headNav:hover {
+  cursor: no-drop;
 }
 .nameInputBox {
+  pointer-events: none;
   width: 60%;
   border: none;
   border-bottom: 2px solid black;
@@ -214,9 +219,58 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
+.listOfCities {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  list-style-type: square;
+}
+.listOfCities li {
+  list-style-position: inside;
+  margin-top: 8px;
+  background-color: #282828;
+  color: #dddbdc;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
 @media screen and (max-width: 600px) and (max-height: 800px) and (orientation: portrait) {
 
-  .divHeading {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+  .navBar {
+    width: 100%;
+    position: inherit;
+    height: -webkit-fill-available;
+  }
+  .listOFBtns{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    overflow-x: scroll;
+  }
+  .listOfCities {
+    flex-direction: row;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .rightSide, .LoaderContainer{
+    width: 100%;
+    left: 0;
+    top: 122px;
+    }
+  .outOfMain {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 135px;
+    overflow: auto;
+  }
+  /* .divHeading {
   left: 50%;
   top: 12%;
   font-size: 18px;
@@ -270,5 +324,5 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-  }
+  } */
 }
