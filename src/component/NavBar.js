@@ -1,4 +1,9 @@
-const NavBar = ({ inputRef, handleChange }) => {
+const NavBar = ({
+  inputRef,
+  handleChange,
+  handleIndia,
+  handleIndEntertainment,
+}) => {
   return (
     <>
       <div className="navBar">
@@ -14,10 +19,24 @@ const NavBar = ({ inputRef, handleChange }) => {
             placeholder="Type Here"
           />
           <button className="EnterBtn" onClick={handleChange}>
-            <img src="../images/handSearch.svg" alt="Enter Button" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/handSearch.svg"}
+              alt="Enter Button"
+            />
           </button>
         </div>
-        <ul>{/* <li>Check</li> */}</ul>
+        <ul className="listOFBtns">
+          <li>
+            <button className="listBtn" onClick={handleIndia}>
+              Top headlines of India
+            </button>
+          </li>
+          <li>
+            <button className="listBtn" onClick={handleIndEntertainment}>
+              Entertainment headlines of India
+            </button>
+          </li>
+        </ul>
       </div>
     </>
   );
