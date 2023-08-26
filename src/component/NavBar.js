@@ -20,25 +20,27 @@ const NavBar = ({ inputRef, handleChange, handleDataUpdate }) => {
             />
           </button>
         </div>
-        <ul className="listOFBtns">
-          <li>
-            <button
-              id="headlineIndia"
-              className="listBtn"
-              onClick={handleDataUpdate}
-            >
-              Top headlines of India
-            </button>
-          </li>
-          <li>
-            <button
-              id="entertainmentIndia"
-              className="listBtn"
-              onClick={handleDataUpdate}
-            >
-              Entertainment headlines of India
-            </button>
-          </li>
+        <div className="listOFBtns">
+          <ul className="topBtns">
+            <li>
+              <button
+                id="headlineIndia"
+                className="listBtn"
+                onClick={handleDataUpdate}
+              >
+                Top headlines of India
+              </button>
+            </li>
+            <li>
+              <button
+                id="entertainmentIndia"
+                className="listBtn"
+                onClick={handleDataUpdate}
+              >
+                Entertainment headlines of India
+              </button>
+            </li>
+          </ul>
           <div>
             <ul className="listOfCities">
               <li id="satara" onClick={handleDataUpdate}>
@@ -64,7 +66,7 @@ const NavBar = ({ inputRef, handleChange, handleDataUpdate }) => {
               </li>
             </ul>
           </div>
-        </ul>
+        </div>
       </div>
     </>
   );
