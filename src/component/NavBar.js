@@ -13,7 +13,7 @@ const NavBar = ({ inputRef, handleChange, handleDataUpdate }) => {
             title="Enter Your City, State or Country Name Here"
             placeholder="Type Here"
           />
-          <button className="EnterBtn" onClick={handleChange} disabled>
+          <button className="EnterBtn" onClick={handleChange}>
             <img
               src={process.env.PUBLIC_URL + "/images/handSearch.svg"}
               alt="Enter Button"

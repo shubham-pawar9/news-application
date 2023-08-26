@@ -21,13 +21,16 @@ const Main = () => {
   }, [apiUpdate]);
 
   const handleChange = () => {
-    setApiUpdate(
-      `https://newsapi.org/v2/everything?q=${inputRef.current.value}&apiKey=b0aea83d13bf4cd581fcbb015a974623`
+    alert(
+      "Sorry, Data is not usable on live projects and access has been disabled."
     );
-    setStatus(true);
-    setLoadingComplete(false);
-    setInitialNum(0);
-    console.log(newsData);
+    // setApiUpdate(
+    //   `https://newsapi.org/v2/everything?q=${inputRef.current.value}&apiKey=b0aea83d13bf4cd581fcbb015a974623`
+    // );
+    // setStatus(true);
+    // setLoadingComplete(false);
+    // setInitialNum(0);
+    // console.log(newsData);
   };
 
   const handleDataUpdate = (e) => {
